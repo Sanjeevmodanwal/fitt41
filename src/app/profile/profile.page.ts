@@ -27,6 +27,8 @@ export class  ProfilePage{
   code:null;
   profile_img:any;
   bg_img:string;
+  connect_people:any;
+  count_workout:any;
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -45,6 +47,8 @@ export class  ProfilePage{
   }
 
   ngOnInit() {
+    this.connect_people=localStorage.getItem('connected');
+    this.count_workout=localStorage.getItem('workout');
     // this.profile_img = this.activatedRoute.snapshot.paramMap.get('img');
     // //this.croppedImagepath =this.activatedRoute.snapshot.paramMap.get('profile');
     // console.log("profile",this.profile_img);
@@ -142,6 +146,10 @@ export class  ProfilePage{
   ionViewWillEnter() {
     let uid=this.uid;
     this.get(uid);
+  }
+
+  back(){
+    this.router.navigate(['/tabs/']);
   }
 
 

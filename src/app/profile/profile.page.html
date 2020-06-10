@@ -2,7 +2,7 @@
     <ion-grid class="user-icon">
         <div class="logo-image" [style.backgroundImage]="'url(' + bg_img + ')'"></div>
         <!-- <a routerLink="/upload">upload background image</a> -->
-        <ion-icon name="arrow-back-outline"></ion-icon>
+        <ion-icon name="arrow-back-outline" (click)="back()"></ion-icon>
         <i class="fa fa-pencil one" aria-hidden="true" (click)="bg()"></i>
         <div class="profile">
             <div class="profile-imgs">
@@ -74,15 +74,15 @@
     <ion-grid>
         <div class="bottom-box">
             <ion-row>
-                <ion-col size="6">
+                <ion-col size="6"  routerLink="/tabs/weeklyworkout">
                     <ion-icon name="barbell-outline"></ion-icon>
                     <p>WORKOUTS</p>
-                    <P>2</P>
+                    <P>{{this.count_workout}}</P>
                 </ion-col>
-                <ion-col size="6">
+                <ion-col size="6" routerLink="/invite-people">
                     <i class="fa fa-users" aria-hidden="true"></i>
                     <p>CONNECTED</p>
-                    <P>5</P>
+                    <P>{{this.connect_people}}</P>
                 </ion-col>
             </ion-row>
         </div>
