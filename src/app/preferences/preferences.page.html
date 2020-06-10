@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <div class="back-button" routerLink="/tabs/setting">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </div>
+        <ion-title>
+            MORE
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-grid>
+        <div class="list">
+            <ul>
+                <li>Preferences <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></li>
+                <li>Push Notifications <span><ion-toggle class="toggle"  checked></ion-toggle></span></li>
+                <li>Allow Access to My Contacts <span><ion-toggle class="toggle"  checked></ion-toggle></span></li>
+                <li>Allow My Location <span><ion-toggle class="toggle"  checked></ion-toggle></span></li>
+                <li>Others Can See My Activity <span><ion-toggle class="toggle"  checked></ion-toggle></span></li>
+            </ul>
+        </div>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,212 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <div class="back-button" routerLink="/tabs/tab1">
+            <span class="one"></span>
+            <span class="one"></span>
+            <span class="two"></span>
+        </div>
+        <ion-title>
+            WEEKLY WORKOUTS
+        </ion-title>
+        <div class="right-button" routerLink="/tabs/tab1">
+            <img src="../../assets/images/runing-icon.png" />
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-content>
+        <ion-grid>
+            <ion-row class="head">
+                <ion-col>S</ion-col>
+                <ion-col>M</ion-col>
+                <ion-col>T</ion-col>
+                <ion-col class="active">W</ion-col>
+                <ion-col>T</ion-col>
+                <ion-col>F</ion-col>
+                <ion-col>S</ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 class="banner-one" (click)="cate(1)">
+                    <div class="inner-banner">
+                        <div class="left-text">
+                            <img src="../../assets/images/HEART RATE ELEMENT.webp" />
+                        </div>
+                        <div class="right-text">
+                            <p>INCLINE BENCH PRESS</p>
+                            <div class="inner-right-text">
+                                <div class="right-box-l-text">
+                                    <h4>3</h4>
+                                    <p>SETS</p>
+                                </div>
+                                <div class="right-box-md-text">
+
+                                    <h4>
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> 60 secs
+                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                    </h4>
+                                    <p>REST</p>
+
+                                </div>
+                                <div class="right-box-m-text">
+                                    <h4>10</h4>
+                                    <p>REPS</p>
+                                </div>
+                                <div class="right-box-r-text">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-12 class="banner-two" (click)="cate(2)">
+                    <div class="inner-banner">
+                        <div class="left-text">
+                            <img src="../../assets/images/HEART RATE ELEMENT.webp" />
+                        </div>
+                        <div class="right-text">
+                            <p>TRICEP DIPS</p>
+                            <div class="inner-right-text">
+                                <div class="right-box-l-text">
+                                    <h4>3</h4>
+                                    <p>SETS</p>
+                                </div>
+                                <div class="right-box-md-text">
+
+                                    <h4>
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> 60 secs
+                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                    </h4>
+                                    <p>REST</p>
+
+                                </div>
+                                <div class="right-box-m-text">
+                                    <h4>10</h4>
+                                    <p>REPS</p>
+                                </div>
+                                <div class="right-box-r-text">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-12 class="banner-three" (click)="cate(3)">
+                    <div class="inner-banner">
+                        <div class="left-text">
+                            <img src="../../assets/images/HEART RATE ELEMENT.webp" />
+                        </div>
+                        <div class="right-text">
+                            <p>CHEST FLYS</p>
+                            <div class="inner-right-text">
+                                <div class="right-box-l-text">
+                                    <h4>3</h4>
+                                    <p>SETS</p>
+                                </div>
+                                <div class="right-box-md-text">
+
+                                    <h4>
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> 60 secs
+                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                    </h4>
+                                    <p>REST</p>
+
+                                </div>
+                                <div class="right-box-m-text">
+                                    <h4>10</h4>
+                                    <p>REPS</p>
+                                </div>
+                                <div class="right-box-r-text">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+
+
+            <ion-row routerLink="/tabs/weeklyworkoutdetail">
+                <ion-col col-12 class="banner-one" (click)="cate(4)">
+                    <div class="inner-banner">
+                        <div class="left-text">
+                            <img src="../../assets/images/HEART RATE ELEMENT.webp" />
+                        </div>
+                        <div class="right-text">
+                            <p>TRICEP DIPS</p>
+                            <div class="inner-right-text">
+                                <div class="right-box-l-text">
+                                    <h4>3</h4>
+                                    <p>SETS</p>
+                                </div>
+                                <div class="right-box-md-text">
+
+                                    <h4>
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> 60 secs
+                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                    </h4>
+                                    <p>REST</p>
+
+                                </div>
+                                <div class="right-box-m-text">
+                                    <h4>10</h4>
+                                    <p>REPS</p>
+                                </div>
+                                <div class="right-box-r-text">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+
+
+            <ion-row routerLink="/tabs/weeklyworkoutdetail">
+                <ion-col col-12 class="banner-two" (click)="cate(5)">
+                    <div class="inner-banner">
+                        <div class="left-text">
+                            <img src="../../assets/images/HEART RATE ELEMENT.webp" />
+                        </div>
+                        <div class="right-text">
+                            <p>INCLINE BENCH PRESS</p>
+                            <div class="inner-right-text">
+                                <div class="right-box-l-text">
+                                    <h4>3</h4>
+                                    <p>SETS</p>
+                                </div>
+                                <div class="right-box-md-text">
+
+                                    <h4>
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> 60 secs
+                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                    </h4>
+                                    <p>REST</p>
+
+                                </div>
+                                <div class="right-box-m-text">
+                                    <h4>10</h4>
+                                    <p>REPS</p>
+                                </div>
+                                <div class="right-box-r-text">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+
+
+
+        </ion-grid>
+    </ion-content>
+</ion-content>

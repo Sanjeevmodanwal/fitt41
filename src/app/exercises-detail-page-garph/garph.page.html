@@ -1,0 +1,124 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <div class="back-button" routerLink="/tabs/tab1">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        </div>
+        <ion-title>
+            <i class="fa fa-line-chart" aria-hidden="true"></i>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-grid class="top-bar one">
+        <ion-toolbar no-border-top>
+            <ion-segment [(ngModel)]="target" (ionChange)="segmentChanged($event)">
+                <ion-segment-button value="alltime" shadowCustomCss='.button-inner{white-space:normal;}'>
+                    <ion-label>All time</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="thisyear">
+                    <ion-label>This year</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="thisweek">
+                    <ion-label> This week</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="today">
+                    <ion-label>Today</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+        </ion-toolbar>
+
+        <div [hidden]="target != 'alltime'">
+            <ion-card padding-top=10px>
+                <ion-card-header>
+                    <ion-card-subtitle>1RM OVER TIME <i class="fa fa-info" aria-hidden="true"></i></ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                    <canvas #barChart height="150"></canvas>
+                </ion-card-content>
+            </ion-card>
+        </div>
+        <div [hidden]="target != 'thisyear'">
+            <ion-card padding-top=10px>
+                <ion-card-header>
+                    <ion-card-subtitle>1RM OVER TIME <i class="fa fa-info" aria-hidden="true"></i></ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                    <canvas #yearChart height="150"></canvas>
+                </ion-card-content>
+            </ion-card>
+        </div>
+        <div [hidden]="target != 'thisweek'">
+            <ion-card padding-top=10px>
+                <ion-card-header>
+                    <ion-card-subtitle>1RM OVER TIME <i class="fa fa-info" aria-hidden="true"></i></ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                    <canvas #weekChart height="150"></canvas>
+                </ion-card-content>
+            </ion-card>
+        </div>
+        <div [hidden]="target != 'today'">
+            <ion-card padding-top=10px>
+                <ion-card-header>
+                    <ion-card-subtitle>1RM OVER TIME <i class="fa fa-info" aria-hidden="true"></i></ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                    <canvas #todayChart height="150"></canvas>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </ion-grid>
+    <!-- <ion-grid class="top-bar">
+        <ion-segment [(ngModel)]="segment">
+            <ion-segment-button value="card">
+                Card Info
+            </ion-segment-button>
+            <ion-segment-button value="user">
+                User Info
+            </ion-segment-button>
+
+            <ion-segment-button value="change">
+                Change Password
+            </ion-segment-button>
+
+        </ion-segment>
+
+        <div [ngSwitch]="segment">
+            <ion-card *ngSwitchCase="'card'">
+                <ion-card-header>
+                    <ion-card-subtitle>1RM OVER TIME <i class="fa fa-info" aria-hidden="true"></i></ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                    <canvas #barChart height="150"></canvas>
+                </ion-card-content>
+            </ion-card>
+            <ion-card *ngSwitchCase="'user'">
+                <ion-card-header>
+                    User Info
+                </ion-card-header>
+                <ion-card-content>
+                    Your user info content here
+                </ion-card-content>
+            </ion-card>
+
+
+
+            <ion-card *ngSwitchCase="'change'">
+                <ion-card-header>
+                    Change Password
+                </ion-card-header>
+                <ion-card-content>
+                    <canvas #todayChart height="150"></canvas>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </ion-grid> -->
+    <ion-grid>
+        <div class="top-bar">
+            <h4>MARCH 12,2020</h4>
+            <p>One Rep Max: 220 lbs</p>
+            <p>Weight: 220 lbs</p>
+        </div>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <div class="back-button" routerLink="/tabs">
+            <span class="one"></span>
+            <span class="one"></span>
+            <span class="two"></span>
+        </div>
+        <ion-title>
+            SETTINGS
+        </ion-title>
+        <div class="right-button">
+            <img src="../../assets/images/runing-icon.png" />
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-grid>
+        <div class="list">
+            <ul>
+                <li routerLink="/notification">Notifications <span class="notifications-icon"> <ion-icon name="notifications-outline"></ion-icon><span>{{countNoti}}</span></span></li>
+                <li>ABOUT <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></li>
+                <li>Account <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></li>
+                <li routerLink="/tabs/bluetooth">Bluetooth (BLE) SENSORS <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></li>
+                <li>Apple Watch <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></li>
+                <li routerLink="/tabs/preferences">Preferences <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></li>
+                <li>Connect with us <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></li>
+                <li>Subscription <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></li>
+                <li>Help and Support <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></li>
+                <li routerLink="/upload">Version <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></li>
+                <li (click)="logout()">Logout <span><i class="fa fa-angle-right" aria-hidden="true"></i></span></li>
+               
+            </ul>
+        </div>
+    </ion-grid>
+</ion-content>

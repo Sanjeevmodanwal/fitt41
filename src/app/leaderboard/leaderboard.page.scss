@@ -1,0 +1,151 @@
+ion-grid {
+    padding: 0px;
+    border-top: 2px solid #262626;
+    margin-top: 5px;
+}
+
+.back-button {
+    position: absolute;
+    left: 15px;
+    z-index: 99;
+    cursor: pointer;
+    span {
+        width: 26px;
+        height: 1px;
+        background: #9e9e9e;
+        display: block;
+        margin: 7px 0px;
+    }
+    span.two {
+        width: 13px !important;
+    }
+}
+
+::ng-deep .toolbar-background,
+::ng-deep .toolbar-container,
+ion-toolbar.in-toolbar {
+    --background: #000 !important;
+    text-align: center !important;
+    color: #fff;
+}
+
+.list {
+    width: 300px;
+    margin: 0 auto;
+    .min-box {
+        color: #fff;
+    }
+    .rank-box {
+        width: 22%;
+        display: inline-block;
+    }
+    .name-box {
+        width: 50%;
+        display: inline-block;
+    }
+    .score-box {
+        width: 28%;
+        display: inline-block;
+        text-align: center;
+    }
+    .heading-box {
+        border-bottom: 1px solid #343434;
+        margin: 0px 0px;
+        padding: 8px 0px;
+        width: 100%;
+        h4 {
+            margin: 0;
+            font-size: 15px;
+        }
+    }
+    .inner-list {
+        border-top: 1px solid #343434;
+        margin: 5px 0px 5px!important;
+        padding: 12px 0px;
+        width: 100%;
+        h4 {
+            margin: 0;
+            font-size: 12px;
+        }
+    }
+    .inner-list.one {
+        background: #786d1e;
+        border-radius: 10px;
+        .name-box h4,
+        .rank-box h4 {
+            color: #c4b96a;
+        }
+        .score-box h4 {
+            color: #af6d1e;
+        }
+    }
+    .inner-list.two {
+        background: #999999;
+        border-radius: 10px;
+        .name-box h4,
+        .rank-box h4 {
+            color: #cacaca;
+        }
+        .score-box h4 {
+            color: #cacaca;
+        }
+    }
+    .inner-list.three {
+        background: #856831;
+        border-radius: 10px;
+        .name-box h4,
+        .rank-box h4 {
+            color: #bc9f68;
+        }
+        .score-box h4 {
+            color: #bc9f68;
+        }
+    }
+}
+
+.inner-list:last-child {
+    border-bottom: 1px solid #343434;
+    margin: 5px 0px 5px!important;
+    padding: 12px 0px;
+    width: 100%;
+}
+
+ion-title {
+    span {
+        vertical-align: top;
+        .fa {
+            font-size: 24px;
+            margin: 2px 5px;
+            color: #3cb54a;
+        }
+    }
+}
+
+span.hading {
+    width: 152px;
+    display: inline-block;
+    a {
+        display: block;
+        font-size: 11px;
+        margin-top: 5px;
+        color: #fff;
+    }
+}
+
+.top-box {
+    h4 {
+        color: #3cb54a;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    p {
+        color: #3cb54a;
+        text-align: center;
+        font-size: 11px;
+        margin-top: 0px;
+        margin-bottom: 50px;
+        letter-spacing: 1px;
+    }
+}

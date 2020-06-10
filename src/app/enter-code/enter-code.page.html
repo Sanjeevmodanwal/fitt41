@@ -1,0 +1,21 @@
+<ion-content>
+    <ion-grid class="logo-image">
+        <img src="../../assets/images/logo.png" />
+    </ion-grid>
+    <ion-grid>
+        <form>
+            <ion-item class="light-back one">
+                <label>ENTER CODE</label>
+            </ion-item>
+            <ion-item class="light-back">
+                <ion-input #Field1 (keyup)="gotoNextField(Field2)"></ion-input>
+                <ion-input #Field2 (keyup)="gotoNextField(Field3)"> </ion-input>
+                <ion-input #Field3 (keyup)="gotoNextField(Field4)"> </ion-input>
+                <ion-input #Field4 (keyup)="finishFunction()"> </ion-input>
+            </ion-item>
+            <div class="button-login">
+                <button type="submit" class="login" routerLink="/tabs">GO <span><ion-icon name="arrow-forward-outline"></ion-icon></span></button>
+            </div>
+        </form>
+    </ion-grid>
+</ion-content>

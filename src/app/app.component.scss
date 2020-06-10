@@ -1,0 +1,14 @@
+::ng-deep #background-content,
+::ng-deep div#background-content,
+::ng-deep ion-content {
+    --background: #000;
+}
+
+::ng-deep * {
+    font-family: 'Muli', sans-serif;
+}
+
+::ng-deep button.button-native {
+    width: 50px;
+    min-width: 62px !important;
+}

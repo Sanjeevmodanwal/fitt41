@@ -1,0 +1,152 @@
+<!-- <ion-header [translucent]="true">
+    <ion-toolbar>
+        <div class="back-button" routerLink="/tabs">
+            <span class="one"></span>
+            <span class="one"></span>
+            <span class="two"></span>
+        </div>
+        <ion-title style="opacity: 0;">
+            MY EXERCISES
+        </ion-title>
+    </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+    <ion-content>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 class="banner-one">
+                    <div class="back-button-share">
+                        <i class="fa fa-angle-left" aria-hidden="true" routerLink="/tabs/weeklyworkout"></i>
+                        <p><i class="fa fa-share" aria-hidden="true"></i> Share</p>
+                    </div>
+                    <div class="inner-one-box">
+                        <h4><img src="../../assets/images/HEART RATE ELEMENT.webp" /> INCLINE BENCH PRESS</h4>
+                        <p>1. Lie flat on an incline bench at a 45 degree angle, with your feet shoulder width apart. Grasp the bar a little Wider than shoulder width apart.  
+                            <span (click)="picDate()"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </p>
+                        
+                       
+                              
+                <form class="add-form" *ngIf="showInput">
+                    <ion-row>
+    
+                        <ion-col size="6">
+                            <ion-item>
+                                <ion-input  [(ngModel)]="set" name="set" placeholder="Enter SET"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col size="6">
+                            <ion-item>
+                                <ion-input [(ngModel)]="rep" name="rep" placeholder="Enter REP"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col size="6">
+                            <ion-item>
+                                <ion-input [(ngModel)]="weight" name="weight" placeholder="Enter Weight"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col size="6">
+                            <ion-item>
+                                <ion-datetime (ionChange)="getdate($event)" [(ngModel)]="date" name="date" displayFormat="YYYY-MM-DD" placeholder="Select Date"></ion-datetime>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col size="12" style="text-align: center;">
+                            <button (click)="addworkout()">Add</button>
+                        </ion-col>
+    
+                    </ion-row>
+                </form>
+
+
+
+                <div class="inner-banner">
+                    <div class="left-text">
+                        <h1>SET</h1>
+
+                       
+                    </div>
+                    <div class="right-text">
+                        <div class="inner-right-text">
+                            <div class="right-box-l-text">
+                                <h1 style="opacity: 0;">REP</h1>
+
+                            </div>
+                            <div class="right-box-m-text">
+                                <h1>REP</h1>
+      
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                      
+                        <div class="inner-banner data" *ngFor="let item of items">
+                            <div class="left-text">
+                   
+                                <h3>{{item.set}}</h3>
+                               
+                            </div>
+                            <div class="right-text">
+                                <div class="inner-right-text">
+                                    <div class="right-box-l-text">
+                                    
+                                        <div class="list">
+                                            <h5>60 SECS</h5>
+                                            <P>REST</P>
+                                        </div>
+                                    </div>
+                                    <div class="right-box-m-text">
+                                  
+                                        <h3>{{item.rep}}</h3>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inner-two-box">
+                        <div class="inner-banner" *ngFor="let item of items">
+                            <div class="left-text">
+                                <h3>{{item.set}}.<span>SET</span></h3>
+                              
+                            </div>
+                            <div class="right-text">
+                                <div class="inner-right-text">
+                                    <div class="right-box-l-text">
+                                        <div class="list-bottom">
+                                            <h5>{{item.rep}}</h5>
+                                            <P>REP</P>
+                                        </div>
+                                      
+                                    </div>
+                                    <div class="right-box-m-text">
+                                        <h3>
+                                            {{item.weight}}KG
+                                            <span>WEIGHT</span>
+                                        </h3>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                    </div>
+
+
+                    <div class="inner-banner" *ngIf="AddBtn">
+                        <div class="add-button" (click)="show()">
+                            <button><i class="fa fa-plus" aria-hidden="true"></i> ADD</button>
+                        </div>
+                    </div>
+
+                </ion-col>
+                
+            </ion-row>
+    
+      
+        </ion-grid>
+    </ion-content>
+</ion-content>

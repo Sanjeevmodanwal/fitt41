@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <!-- <div class="back-button" routerLink="/tabs">
+            <span class="one"></span>
+            <span class="one"></span>
+            <span class="two"></span>
+        </div> -->
+
+        <ion-title routerLink="/tabs/leaderboard">
+            <span><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+            <span class="hading">
+                {{hading | uppercase}}
+                <a>MARCH 2020</a>
+            </span>
+            <span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+        </ion-title>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-grid>
+        <div class="list">
+            <ul>
+                <li class="one-img">
+                    <h3>6 MILE RUN</h3> <span>Today by <a>FITT41</a></span>
+                </li>
+                <li class="two-img">
+                    <h3>SWEAT-IT Survivor</h3> <span>Today by <a>Trevelle Pope</a></span>
+                </li>
+                <li class="three-img">
+                    <h3>INSANE ABS</h3> <span>Today by <a>James Lawrence</a></span>
+                </li>
+                <li class="one-img">
+                    <h3>CALORIE BURN</h3> <span>Yesterday by <a>FITT41</a></span>
+                </li>
+                <li class="two-img">
+                    <h3>CALORIE BURN</h3> <span>Yesterday by <a>FITT41</a></span>
+                </li>
+            </ul>
+        </div>
+    </ion-grid>
+</ion-content>

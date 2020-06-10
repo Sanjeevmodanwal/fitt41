@@ -1,0 +1,50 @@
+.logo-image {
+    padding: 15px 15px;
+    width: 110px;
+    height: 100px;
+    margin: 0 auto;
+    text-align: right;
+    margin-top: 25vh;
+    background: #fff;
+    border-radius: 25px;
+    .fa-heart {
+        color: #ff457e;
+        font-size: 30px;
+        text-shadow: 2px 6px 8px rgba(0, 0, 0, 0.3);
+        background: transparent;
+    }
+}
+
+.text-white {
+    text-align: center;
+    h1 {
+        color: #fff;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    p {
+        color: #fff;
+        font-size: 10px;
+        text-align: center;
+        margin: 0px;
+        font-weight: 300;
+    }
+}
+
+ion-grid.button-login {
+    margin-top: 20vh;
+    text-align: center;
+    p {
+        color: #fff;
+        font-size: 11px;
+    }
+    button {
+        background: #ff457e;
+        padding: 10px 60px;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-bottom: 13px;
+    }
+}

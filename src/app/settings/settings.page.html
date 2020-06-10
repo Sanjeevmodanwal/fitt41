@@ -1,0 +1,45 @@
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
+    </ion-toolbar>
+</ion-header> -->
+<ion-content>
+    <ion-grid class="logo-image">
+        <img src="../../assets/images/logo.png" />
+    </ion-grid>
+    <ion-grid>
+        <form>
+            <ion-item class="light-back">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <ion-input type="text" [(ngModel)]="fname"  name="fname" placeholder="First Name"></ion-input>
+            </ion-item>
+            <ion-item class="light-back">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <ion-input type="text" [(ngModel)]="lname"  name="lname"  placeholder="Last Name"></ion-input>
+            </ion-item>
+            <ion-item class="light-back">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <ion-input type="email" [(ngModel)]="email"  name="email" placeholder="Email Address"></ion-input>
+            </ion-item>
+            <ion-item class="light-back">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <ion-input type="password" [(ngModel)]="password"  name="password" placeholder="Password"></ion-input>
+            </ion-item>
+            <ion-item class="light-back">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <ion-input type="password" [(ngModel)]="cpass"  name="cpass"  placeholder="Confirm Password"></ion-input>
+            </ion-item>
+            <div class="button-login">
+                <button type="button" class="login" (click)="singin()">SIGN UP</button>
+            </div>
+           <div class="login-text-button">
+            <a routerLink="/login">Login</a>
+           </div>
+        </form>
+        
+         
+    </ion-grid>
+   
+</ion-content>

@@ -1,0 +1,140 @@
+.logo-image {
+    width: 180px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 44px;
+}
+
+.slide {
+    h1 {
+        color: #fff;
+        margin-top: 0px;
+        font-size: 20px;
+    }
+}
+
+.text-white {
+    p {
+        color: #404040;
+        font-size: 10px;
+        text-align: center;
+    }
+}
+
+::ng-deep .item-native,
+::ng-deep .item .item-input,
+::ng-deep ion-item .item-native {
+    background: #2e2e2e;
+    border: 1px solid #717171;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    color: #fff;
+    opacity: 1;
+}
+
+.item,
+.list,
+.item-content,
+.item-complex {
+    --ion-background-color: #2e2e2e !important;
+    // background: #2e2e2e;
+    border: 1px solid #717171;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    color: #fff;
+    opacity: 1;
+}
+
+form.ng-untouched.ng-pristine.ng-valid {
+    width: 320px;
+    margin: 0 auto;
+    padding-top: 12vh;
+}
+
+ion-input {
+    padding-left: 15px !important;
+    font-family: "Muli", sans-serif;
+}
+
+::ng-deep ion-item.light-back.item-interactive.item-input:focus {
+    --ion-background-color: #2e2e2e !important;
+}
+
+.activated {
+    --ion-item-background: #2e2e2e !important;
+}
+
+.item-has-focus {
+    --highlight-background: #2e2e2e !important;
+}
+
+.button-login {
+    margin-top: 30px;
+    text-align: center;
+    button.login {
+        background: #3cb54a;
+        padding: 15px 38px;
+        border: 1px solid #fff;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 13px;
+        letter-spacing: 1px;
+        width: 100%;
+        font-weight: 400;
+        margin-left: 3px;
+        text-align: left;
+        margin-top: 30px;
+        position: relative;
+        span {
+            float: right;
+            vertical-align: top;
+            ion-icon {
+                font-size: 14px;
+                vertical-align: bottom;
+                position: absolute;
+                top: 50%;
+                right: 22px;
+                transform: translate(-0%, -50%);
+            }
+        }
+    }
+}
+
+ion-item.male.item {
+    border: none;
+    position: absolute;
+    right: 70px;
+    z-index: 9;
+    ion-radio {
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+ion-item.female.item {
+    border: none;
+    ion-radio {
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+.gender {
+    position: absolute;
+    right: 0px;
+    z-index: 9;
+    p {
+        display: inline-block;
+        background: #6a6a6a;
+        margin: 0px;
+        padding: 13px 2px;
+        border-radius: 100px;
+        width: 60px;
+        border: 1px solid #a6a6a6;
+        font-size: 16px;
+        text-align: center;
+    }
+    p.active {
+        background: #c8cacb;
+    }
+}

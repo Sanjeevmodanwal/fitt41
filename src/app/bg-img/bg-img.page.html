@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="bck()">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+      <ion-title>upload</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <ion-card>
+    <img [src]="croppedImagepath" />
+      <!-- <img [src]="croppedImagepath" /> -->
+
+  </ion-card>
+  <ion-row>
+      <ion-col class="size-6 ion-text-center">
+          <button (click)="selectImage()">
+              <ion-icon slot="icon-only" name="camera"></ion-icon>
+              pic image
+          </button>
+      </ion-col>
+      <ion-col class="size-6 ion-text-center" *ngIf="show">
+          <button (click)="uploadImage()">
+              Upload Photo
+          </button>
+      </ion-col>
+  </ion-row>
+</ion-content>

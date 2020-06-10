@@ -1,0 +1,87 @@
+ion-grid {
+    padding: 0px;
+    border-top: 2px solid #262626;
+    margin-top: 15px;
+}
+
+.back-button {
+    position: absolute;
+    left: 15px;
+    z-index: 99;
+    cursor: pointer;
+    top: 15px;
+    .fa {
+        font-size: 30px;
+    }
+    span {
+        width: 26px;
+        height: 1px;
+        background: #9e9e9e;
+        display: block;
+        margin: 7px 0px;
+    }
+    span.two {
+        width: 13px !important;
+    }
+}
+
+::ng-deep .toolbar-background,
+::ng-deep .toolbar-container,
+ion-toolbar.in-toolbar {
+    --background: #000 !important;
+    text-align: left !important;
+    color: #fff;
+    ion-title {
+        margin-left: 18px;
+    }
+}
+
+.list {
+    background: #bcbec0;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    ul {
+        list-style: none;
+        padding: 0px;
+        margin-bottom: 0;
+        li {
+            padding: 20px;
+            border-bottom: 1px solid #dee1e3;
+            font-size: 12px;
+            font-weight: bold;
+            color: #3b4f5c;
+            span {
+                float: right;
+                font-size: 23px;
+                color: #c5cdcf;
+                line-height: 0;
+                margin-top: -5px;
+            }
+        }
+        li:last-child {
+            border: none;
+        }
+    }
+}
+
+ion-toggle {
+    margin-top: -15px;
+    margin-right: -15px;
+    --handle-background: white;
+    --handle-background-checked: white;
+    // height: 21px;
+    toggle-inner {
+        color: #fff;
+        --background: #fff !important;
+        --handle-background: white;
+        --handle-background-checked: white;
+        --top: 0px !important;
+        --left: -1px !important;
+    }
+}
+
+.toggle {
+    --background: #ffffff;
+    --background-checked: #86bbbe;
+}

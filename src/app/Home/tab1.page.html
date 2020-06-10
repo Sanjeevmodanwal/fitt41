@@ -1,0 +1,50 @@
+<ion-content [fullscreen]="true">
+    <ion-content>
+        <ion-grid class="logo-image">
+            <img src="../../assets/images/logo.png" />
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <h4 class="text-garph"><img src="../../assets/images/right-icon.png"> 17</h4>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-6 class="banner-one" routerLink="/tabs/statspage">
+                    <div class="inner-banner">
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                        <p>STATS</p>
+                    </div>
+                </ion-col>
+                <ion-col col-6 class="banner-two" routerLink="/tabs/challenges">
+                    <div class="inner-banner">
+                        <div class="graph">
+                            <span class="one-box">2</span>
+                            <span class="two-box">1</span>
+                            <span class="three-box">3</span>
+                        </div>
+                        <p>CHALLENGES /</p>
+                        <p>LEADERBOARD</p>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-6 class="banner-three" routerLink="/tabs/community">
+                    <div class="inner-banner">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <p>COMMUNNITY</p>
+                    </div>
+                </ion-col>
+                <ion-col col-6 class="banner-four" routerLink="/tabs/weeklyworkout">
+                    <div class="inner-banner">
+                        <img src="../../assets/images/runing-icon.png" style="width: 38px;margin-bottom: 5px;" />
+                        <p>WEEKLY</p>
+                        <p>WORKOUT</p>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-content>
+
+    <!-- <app-explore-container name="Tab page"></app-explore-container> -->
+</ion-content>

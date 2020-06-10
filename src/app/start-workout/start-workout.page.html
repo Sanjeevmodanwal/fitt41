@@ -1,0 +1,69 @@
+<ion-content [fullscreen]="true">
+    <ion-grid class="top-col">
+        <ion-row>
+            <ion-col>
+                <h2>00:10:09</h2>
+            </ion-col>
+            <ion-col routerLink="/tabs/running">
+                <h4>RUNNING <i class="fa fa-angle-right" aria-hidden="true"></i></h4>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+        <div class="flex-container">
+            <circle-progress [radius]="100" [percent]="57" [outerStrokeGradient]="true" [outerStrokeWidth]="10" [innerStrokeWidth]="10" [outerStrokeColor]="'#42f0e2'" [outerStrokeGradientStopColor]="'#4694ff'" [innerStrokeColor]="'#1b1b1b'" [animation]="true" [animationDuration]="2000"
+                [space]="-10" [unitsFontSize]="24" [showSubtitle]="false" [responsive]="false" [showUnits]="false" [showBackground]="false" [startFromZero]="false" [showZeroOuterStroke]="true">
+            </circle-progress>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <div class="bpm-text">
+                <h1>65 <span>BPM</span></h1>
+            </div>
+        </div>
+    </ion-grid>
+    <ion-grid class="min-col">
+        <ion-row>
+            <ion-col size="1"></ion-col>
+            <ion-col size="4">
+                <div class="progress-bar-list red">
+                    <p>RED LINE <span>90%</span></p>
+                    <ion-progress-bar value="0.9"></ion-progress-bar>
+                </div>
+                <div class="progress-bar-list org">
+                    <p>HARDCORE <span>80%</span></p>
+                    <ion-progress-bar value="0.8"></ion-progress-bar>
+                </div>
+                <div class="progress-bar-list wal">
+                    <p>ENDURANCE <span>70%</span></p>
+                    <ion-progress-bar value="0.7"></ion-progress-bar>
+                </div>
+                <div class="progress-bar-list li-green">
+                    <p>FITNESS <span>60%</span></p>
+                    <ion-progress-bar value="0.6"></ion-progress-bar>
+                </div>
+                <div class="progress-bar-list green">
+                    <p>WARM UP <span>40%</span></p>
+                    <ion-progress-bar value="0.4"></ion-progress-bar>
+                </div>
+            </ion-col>
+            <ion-col size="1"></ion-col>
+            <ion-col size="6">
+                <div class="right-pres">
+                    <h1>50%
+                        <span>INTENSITY</span>
+                    </h1>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid class="button-box">
+        <ion-row>
+            <ion-col size="6" class="text-right">
+                <button class="start">START</button>
+            </ion-col>
+            <ion-col size="6" class="text-left" routerLink="/tabs/summarypage">
+                <button class="stop">STOP</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

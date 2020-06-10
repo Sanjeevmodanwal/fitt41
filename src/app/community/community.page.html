@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <div class="back-button" routerLink="/tabs/tab1">
+            <span class="one"></span>
+            <span class="one"></span>
+            <span class="two"></span>
+        </div>
+        <ion-title class="ion-text-center">
+            COMMUNITY
+        </ion-title>
+        <div class="right-button">
+            <img src="../../assets/images/runing-icon.png" />
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-content>
+        <ion-grid class="border-top">
+
+        </ion-grid>
+        <ion-grid class="padding-grid">
+            <h4>FEED</h4>
+            <div class="invite">
+                <p>Invite people</p>
+               
+                <!-- <div > -->
+                    <div class="invite-people-img" *ngFor="let invite of peoples">
+                        <div *ngIf="invite.profile==null">
+                            <!-- <img src="../assets/user.png"  (click)="seepost(invite)" /> -->
+                            <img src="../assets/user.png" />
+                        </div>
+                        <div *ngIf="invite.profile">
+                            <img src="https://www.mag-studios.com/Fitt41/images/{{item.uimg}}" />
+                        </div>
+                    </div>
+                <!-- </div> -->
+              
+                <div class="invite-people-icon" routerLink="/invite-people">
+                    +
+                </div> 
+            </div>
+        </ion-grid>
+        <ion-grid class="padding-grid">
+            <div class="user-chat" *ngFor="let item of items">
+                <div class="user-img">
+                    <div *ngIf="item.uimg==null">
+                        <img src="../assets/user.png" />
+                    </div>
+                    <div *ngIf="item.uimg">
+                        <img src="https://www.mag-studios.com/Fitt41/images/{{item.uimg}}" />
+                    </div>
+                </div>
+                <div class="user-name">
+                    <h2>{{item.username}}</h2>
+                    <p>{{item.time}}</p>
+                </div>
+                <div class="user-text">
+                    <p>{{item.post}}</p>
+                </div>
+            </div>
+
+            <!-- <div class="user-chat">
+                <div class="user-img">
+                    <img src="../../assets/images/pusup.jpg" />
+                </div>
+                <div class="user-name">
+                    <h2>Joseph M.</h2>
+                    <p>5h Ago</p>
+                </div>
+                <div class="user-text">
+                    <p>ABSOLUTELY SMASHED that work out.</p>
+                </div>
+            </div> -->
+        </ion-grid>
+
+        <ion-grid class="padding-grid file">
+            <form>
+                <ion-item class="light-back">
+                    <ion-input type="text" [(ngModel)]="comment" name="comment" placeholder="Write something..."></ion-input>
+                </ion-item>
+                <div class="button-login">
+                    <button type="button" (click)="submit()" class="login"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                </div>
+            </form>
+        </ion-grid>
+    </ion-content>
+</ion-content>

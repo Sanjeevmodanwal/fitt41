@@ -1,0 +1,128 @@
+.logo-image {
+    width: 180px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 44px;
+}
+
+.slide {
+    h1 {
+        color: #fff;
+        margin-top: 0px;
+        font-size: 20px;
+    }
+}
+
+.text-white {
+    p {
+        color: #404040;
+        font-size: 10px;
+        text-align: center;
+    }
+}
+
+::ng-deep .item-native,
+::ng-deep .item .item-input,
+::ng-deep ion-item .item-native {
+    background: #2e2e2e;
+    border: 1px solid #717171;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    color: #fff;
+    opacity: 1;
+}
+
+.item,
+.list,
+.item-content,
+.item-complex {
+    --ion-background-color: #2e2e2e !important;
+    // background: #2e2e2e;
+    border: 1px solid #717171;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    color: #fff;
+    opacity: 1;
+}
+
+form.ng-untouched.ng-pristine.ng-valid {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 15vh;
+}
+
+ion-input {
+    padding-left: 15px !important;
+    font-family: "Muli", sans-serif;
+}
+
+::ng-deep ion-item.light-back.item-interactive.item-input:focus {
+    --ion-background-color: #2e2e2e !important;
+}
+
+.activated {
+    --ion-item-background: #2e2e2e !important;
+}
+
+.item-has-focus {
+    --highlight-background: #2e2e2e !important;
+}
+
+.button-login {
+    margin-top: 10px;
+    text-align: center;
+    button.login {
+        background: #3cb54a;
+        padding: 15px 38px;
+        border: 1px solid #3cb54a;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 13px;
+        letter-spacing: 1px;
+        width: 49%;
+        font-weight: bold;
+        margin-left: 3px;
+    }
+    button.singup {
+        background: transparent;
+        border: 1px solid #717171;
+        padding: 15px 38px;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 13px;
+        letter-spacing: 1px;
+        width: 49%;
+        margin-right: 3px;
+        font-weight: bold;
+    }
+}
+
+ion-grid.login-fb-button {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 15vh;
+    width: 280px;
+    button {
+        background: #1b2a3b;
+        padding: 12px 30px;
+        width: 100%;
+        color: #fff;
+        border-radius: 50px;
+        font-size: 15px;
+        position: relative;
+        margin-bottom: 5vh;
+        .fa {
+            position: absolute;
+            left: 20px;
+            font-size: 25px !important;
+            top: 10px;
+        }
+    }
+    p {
+        color: #fff;
+        font-size: 12px;
+        margin-bottom: 12px;
+        margin-top: 2px;
+        letter-spacing: 2px;
+    }
+}
