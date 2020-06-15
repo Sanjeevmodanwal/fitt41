@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <div class="back-button" routerLink="/tabs/tab1">
+          <span class="one"></span>
+          <span class="one"></span>
+          <span class="two"></span>
+      </div>
+      <ion-title>
+          CLASS LIST
+      </ion-title>
+      <!-- <div class="right-button" routerLink="/tabs/tab1">
+          <img src="../../assets/images/runing-icon.png" />
+      </div> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="border-top"></ion-grid>
+  <ion-grid>
+      <ion-row>
+          <ion-col size="6">
+              <form>
+                  <ion-item class="light-back">
+                      <ion-select value="gym" ok-text="Okay" cancel-text="Dismiss">
+                          <ion-select-option value="gym">Gym</ion-select-option>
+                          <ion-select-option value="yoga">Yoga</ion-select-option>
+                      </ion-select>
+                  </ion-item>
+              </form>
+          </ion-col>
+          <ion-col size="6">
+              <ion-item>
+                  <ion-select value="Monday" ok-text="Okay" cancel-text="Dismiss">
+                      <ion-select-option value="Monday">Monday</ion-select-option>
+                      <ion-select-option value="Tuesday">Tuesday</ion-select-option>
+                      <ion-select-option value="Wednesday">Wednesday</ion-select-option>
+                      <ion-select-option value="Thursday">Thursday</ion-select-option>
+                      <ion-select-option value="Friday">Friday</ion-select-option>
+                      <ion-select-option value="Saturday">Saturday</ion-select-option>
+                      <ion-select-option value="Sunday">Sunday</ion-select-option>
+                  </ion-select>
+              </ion-item>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+      <ion-row>
+          <ion-col size="12">
+              <div class="class-listing-box">
+                  <h2>Gym</h2>
+                  <p>Available</p>
+                  <ion-item style="border-radius: 5px;margin-top: 15px;">
+                      <ion-select value="5" ok-text="Okay" cancel-text="Dismiss">
+                          <ion-select-option value="5">5:00 AM</ion-select-option>
+                          <ion-select-option value="6">6:00 AM</ion-select-option>
+                          <ion-select-option value="7">7:00 AM</ion-select-option>
+                          <ion-select-option value="8">8:00 AM</ion-select-option>
+                      </ion-select>
+                  </ion-item>
+              </div>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

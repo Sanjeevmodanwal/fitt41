@@ -4,10 +4,10 @@ export const environment = {
 
   // Production
   
- // product: 'https://www.mag-studios.com/Fitt41',  
+   product: 'https://www.mag-studios.com/Fitt41',  
   
   // Development
-  product: 'http://localhost/codeigniter/api', 
+ // product: 'http://localhost/codeigniter/api', 
   skipRequest: false,
   allowMultipleLocation: false,
  

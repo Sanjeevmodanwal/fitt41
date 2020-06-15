@@ -47,6 +47,14 @@ const routes: Routes = [
     path: 'bg-img',
     loadChildren: () => import('./bg-img/bg-img.module').then( m => m.BgImgPageModule)
   },
+  {
+    path: 'class-name',
+    loadChildren: () => import('./class-name/class-name.module').then( m => m.ClassNamePageModule)
+  },
+  {
+    path: 'class-listing',
+    loadChildren: () => import('./class-listing/class-listing.module').then( m => m.ClassListingPageModule)
+  },
   // {
   //   path: 'exercises-detail',
   //   loadChildren: () => import('./exercises-detail/exercises-detail.module').then( m => m.ExercisesDetailPageModule)
