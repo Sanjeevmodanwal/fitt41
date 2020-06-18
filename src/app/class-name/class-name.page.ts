@@ -16,11 +16,12 @@ import { environment } from '../../environments/environment.prod';
   styleUrls: ['./class-name.page.scss'],
 })
 export class ClassNamePage implements OnInit {
-  public items: Array<{id:any;name:string,capacity:string,duration:string,hour:string,miniut:string,status:any,enroll:string;}> = [];
+  public items: Array<{id:any;name:string,capacity:string,duration:string,hour:string,miniut:string,status:any,enroll:string;user_id:any;}> = [];
   public locations: Array<{id:string,lname:string}> = [];
   sl:any;
   day:any;
   uid:any;
+  selectday="Select anshu";
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -69,6 +70,7 @@ export class ClassNamePage implements OnInit {
 
 
   GetSchedule(){
+
     this.presentLoadingWithOptions();
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded'}), };
       this.http.get(this.apiPath+'/Workout/getschedule',httpOptions).subscribe((data: any) => {
@@ -84,7 +86,8 @@ export class ClassNamePage implements OnInit {
               hour:data[i].hour,
               miniut:data[i].min,
               status:data[i].status,
-              enroll:'Enroll'
+              enroll:'Enroll',
+              user_id:data[i].enroll
             });
           }
           this.loadingController.dismiss('class');
@@ -113,7 +116,7 @@ export class ClassNamePage implements OnInit {
 
   getdate(event){
     this.day=event.detail.value;
-
+    this.sl='Seach Place';
   }
 
   getdata(){
@@ -139,7 +142,8 @@ export class ClassNamePage implements OnInit {
               hour:data[i].hour,
               miniut:data[i].min,
               status:data[i].status,
-              enroll:'Enroll'
+              enroll:'Enroll',
+              user_id:data[i].enroll
             });
           }
           this.loadingController.dismiss('class');
@@ -160,5 +164,6 @@ export class ClassNamePage implements OnInit {
          }
       });  
   }
+  
 
 }
