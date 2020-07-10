@@ -54,7 +54,11 @@ const routes: Routes = [
   {
     path: 'class-listing',
     loadChildren: () => import('./class-listing/class-listing.module').then( m => m.ClassListingPageModule)
+  },  {
+    path: 'health',
+    loadChildren: () => import('./health/health.module').then( m => m.HealthPageModule)
   },
+
   // {
   //   path: 'exercises-detail',
   //   loadChildren: () => import('./exercises-detail/exercises-detail.module').then( m => m.ExercisesDetailPageModule)

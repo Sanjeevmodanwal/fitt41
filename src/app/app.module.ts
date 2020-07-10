@@ -21,7 +21,7 @@ import { Crop } from '@ionic-native/crop/ngx';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { CalendarModule } from "ion2-calendar";
 //import { GooglePlus } from '@ionic-native/google-plus/ngx';
-
+import { Health } from '@ionic-native/health/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -48,6 +48,7 @@ import { CalendarModule } from "ion2-calendar";
   ],
   bootstrap: [AppComponent],
   providers: [
+    Health,
    // GooglePlus,
     DatePicker,
     Facebook,

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>google-fit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #fff !important;">
+ <ion-list>
+
+
+  <ion-item (click)="step()">
+    <ion-label> steps</ion-label>
+    <ion-button slot="end">
+      {{steps}}
+    </ion-button>
+  </ion-item>
+
+  
+
+  <ion-item (click)="hert()">
+    <ion-label>heart rate</ion-label>
+    <ion-button slot="end">
+      {{heart}}
+    </ion-button>
+  </ion-item>
+
+  <ion-item (click)="dis()">
+    <ion-label>Distance</ion-label>
+    <ion-button slot="end">
+      {{distance}}
+    </ion-button>
+  </ion-item>
+
+
+  
+  <ion-item (click)="dis()">
+    <ion-label>BPM</ion-label>
+    <ion-button slot="end">
+      {{bpm}}
+    </ion-button>
+  </ion-item>
+
+
+  <ion-item (click)="dis()">
+    <ion-label>Calories</ion-label>
+    <ion-button slot="end">
+      {{cal}}
+    </ion-button>
+  </ion-item>
+
+
+  
+
+ </ion-list>
+</ion-content>
