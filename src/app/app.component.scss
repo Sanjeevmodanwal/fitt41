@@ -12,3 +12,6 @@
     width: 50px;
     min-width: 62px !important;
 }
+::ng-deep ion-col.md.hydrated {
+    outline: none;
+}

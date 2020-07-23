@@ -1,8 +1,21 @@
 <ion-content>
-    <ion-grid class="logo-image">
+    <!-- <ion-grid class="logo-image">
         <img src="../../assets/images/logo.png" />
+    </ion-grid> -->
+
+    <ion-grid class="pos" style="background-color: #fff !">
+        <!-- <div class="black-bg"></div> -->
+
+        <ion-calendar [(ngModel)]="dateRange"
+        [options]="optionsRange"
+        [type]="type"
+        [format]="'YYYY-MM-DD'">
+        </ion-calendar>
+
     </ion-grid>
-    <ion-grid>
+
+
+    <!-- <ion-grid>
         <form>
             <ion-item class="light-back one">
                 <label>ENTER CODE</label>
@@ -17,5 +30,5 @@
                 <button type="submit" class="login" routerLink="/tabs">GO <span><ion-icon name="arrow-forward-outline"></ion-icon></span></button>
             </div>
         </form>
-    </ion-grid>
+    </ion-grid> -->
 </ion-content>

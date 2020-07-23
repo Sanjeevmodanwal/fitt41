@@ -44,8 +44,9 @@
     "cordova-plugin-googleplus": "^8.5.0",
     "cordova-plugin-health": "^1.1.5",
     "ion2-calendar": "^3.0.0-rc.0",
-    "moment": "^2.26.0",
+    "moment": "^2.27.0",
     "ng-circle-progress": "^1.5.1",
+    "org.velardo.cordova-plugin-googlefit": "^1.2.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

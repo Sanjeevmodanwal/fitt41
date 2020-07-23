@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Health } from '@ionic-native/health/ngx';
 import { Storage } from '@ionic/storage';
 import { ValueAccessor } from '@ionic/angular/directives/control-value-accessors/value-accessor';
-
+import * as moment from 'moment';
 @Component({
   selector: 'app-health',
   templateUrl: './health.page.html',
@@ -15,338 +15,266 @@ export class HealthPage implements OnInit {
   distance: any;
   cal: any;
   act: any;
-  bpm:any;
+  bpm: any;
+  date: any;
+  mph: any;
+  duration: any;
+  hour: any;
   constructor(private health: Health, private storage: Storage) {
+
 
     this.health.isAvailable()
       .then((available: boolean) => {
         console.log(available);
         this.health.requestAuthorization([
-          'distance', 'nutrition',  //read and write permissions
+          'distance', 'nutrition','heart_rate','heart_rate.resting','heart_rate.variability', //read and write permissions
           {
             read: ['steps'],       //read only permission
-            write: ['height', 'weight', 'heart_rate','blood_pressure']  //write only permission
+            write: ['height', 'weight', 'heart_rate', 'blood_pressure', 'heart_rate.resting', 'heart_rate.variability']  //write only permission
           }
         ])
           .then(res => console.log(res))
           .catch(e => console.log(e));
       })
 
-
-    this.health.query({
-      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000), // three days ago
-      endDate: new Date(), // now
-      dataType: 'heart_rate',
-    }).then(data => {
-      this.storage.set('heart', data);
-      this.heartcount(data);
-    }).catch(e => {
-      console.log("error " + e);
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-    this.health.query({
-      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000), // three days ago
-      endDate: new Date(), // now
-      dataType: 'steps',
-    }).then(data => {
-      this.storage.set('steps', data);
-      this.stepcount(data);
-      //this.steps =JSON.stringify(data, undefined, 2);
-    }).catch(e => {
-      console.log("error " + e);
-    });
-
-
-    this.health.query({
-      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000), // three days ago
-      endDate: new Date(), // now
-      dataType: 'distance',
-    }).then(data => {
-      this.storage.set('distance', data);
-      
-      this.discount(data);
-      // this.distance = JSON.stringify(data, undefined, 2);
-    }).catch(e => {
-      console.log("error " + e);
-    });
-
-
-    this.health.query({
-      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000), // three days ago
-      endDate: new Date(), // now
-      dataType: 'activity',
-    }).then(data => {
-      this.storage.set('activity', data);
-      console.log('activity', data);
-      this.activity(data);
-    }).catch(e => {
-      console.log("error " + e);
-    });
-
-
-
-    this.health.query({
-      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000), // three days ago
-      endDate: new Date(), // now
-      dataType: 'calories',
-    }).then(data => {
-      this.storage.set('calories', data);
-      console.log('calories', data);
-      this.calories(data);
-    }).catch(e => {
-      console.log("error " + e);
-    });
-
-
-    this.health.query({
-      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000), // three days ago
-      endDate: new Date(), // now
-      dataType: 'blood_pressure',
-    }).then(data => {
-      let blod =JSON.stringify(data, undefined, 2);
-      console.log("blodjson",blod);
-      //this.storage.set('calblood_pressureories', data);
-      console.log('blood_pressure', data);
-      this.bloodP(data);
-      // this.calories(data);
-    }).catch(e => {
-      console.log("error " + e);
-    });
-
-    
-
-
-    // this.health.store({
-    //   startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000),
-    //   // three minutes ago
+    var d = moment(new Date()).format('MM-DD-YYYY');
+    var dt = d.split("-");
+    // this.health.queryAggregated({
+    //   startDate: new Date(dt[0]+'-'+dt[1]+'-'+dt[2]), // three days ago
     //   endDate: new Date(), // now
-    //   dataType: 'blood_pressure',
-    //   value: '{ systolic: 110, diastolic: 70 }',
-    //   sourceName: 'myApp',
-    //   sourceBundleId: 'com.mag.fitt41'
+    //   dataType: 'activity',
     // }).then(data => {
-    //   console.log("systolic: 110, diastolic: 70", data);
-     
+    //   console.log('activity', data);
+    //   let blod = JSON.stringify(data, undefined, 2);
+    //  // console.log("do under go",blod);
+    //   var du=JSON.parse(blod)
+    //  console.log("do distance",du.value.walking.distance);
+    //  console.log("do duration",du.value.walking.duration);
+
+    //   var me=JSON.parse(du.value);
+
+    //   console.log("me distance",me);
+    //   //this.do(data);
     // }).catch(e => {
     //   console.log("error " + e);
-    // })
+    // });
 
 
 
-    this.health.store({
-      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000),
-      // three minutes ago
-      endDate: new Date(), // now
-      dataType: 'activity',
-      value: 'walking',
-      sourceName: 'myApp',
-      sourceBundleId: 'com.mag.fitt41'
-    }).then(data => {
-      console.log("walking_store", data);
-    }).catch(e => {
-      console.log("error " + e);
-    })
+    // this.health.queryAggregated({
+    //   startDate: new Date(dt[0]+'-'+dt[1]+'-'+dt[2]), // three days ago
+    //   endDate: new Date(), // now
+    //   dataType: 'activity',
+    //   bucket: 'days'
+    // }).then(data => {
+    //   console.log('activity days', data);
+
+    //   //this.do(data);
+    // }).catch(e => {
+    //   console.log("error " + e);
+    // });
+
+
+
+    // this.health.queryAggregated({
+    //   startDate: new Date(dt[0]+'-'+dt[1]+'-'+dt[2]), // three days ago
+    //   endDate: new Date(), // now
+    //   dataType: 'activity',
+    //   bucket: 'days'
+    // }).then(data => {
+    //   console.log('activity hour', data);
+    //   this.activity(data);
+    //   this.do(data);
+    // }).catch(e => {
+    //   console.log("error " + e);
+    // });
+
+    // this.health.query({
+    //   startDate: new Date(new Date().getTime() - 3 * 24 * 60 * 60 * 1000), // three days ago
+    //   endDate: new Date(), // now
+    //   dataType: 'TBD',
+    // }).then(data => {
+    //   console.log('heart_rate.resting', data);
+    //  // this.activity(data);
+     
+    // }).catch(e => {
+    //   console.log("error heart_rate.resting" + e);
+    // });
 
 
 
 
-
-
-    this.health.store({
-      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000),
-      // three minutes ago
-      endDate: new Date(), // now
-      dataType: 'calories',
-      value: '245.3',
-      sourceName: 'myApp',
-      sourceBundleId: 'com.mag.fitt41'
-    }).then(data => {
-      console.log("calories_store", data);
-    }).catch(e => {
-      console.log("error " + e);
-    })
-
-
-
-
-
-    this.health.store({
-      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000),
-      // three minutes ago
-      endDate: new Date(), // now
-      dataType: 'steps',
-      value: '34',
-      sourceName: 'myApp',
-      sourceBundleId: 'com.mag.fitt41'
-    }).then(data => {
-      console.log("Store steps", data);
-    }).catch(e => {
-      console.log("error " + e);
-    })
-
-    this.health.store({
-      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000),
-      // three minutes ago
-      endDate: new Date(), // now
-      dataType: 'heart_rate',
-      value: '66',
-      sourceName: 'myApp',
-      sourceBundleId: 'com.mag.fitt41'
-    }).then(data => {
-      console.log("Store heart_rate", data);
-    }).catch(e => {
-      console.log("error " + e);
-    })
-
-
-    this.health.store({
-      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000),
-      // three minutes ago
-      endDate: new Date(), // now
-      dataType: 'distance',
-      value: '101.2',
-      sourceName: 'myApp',
-      sourceBundleId: 'com.mag.fitt41'
-    }).then(data => {
-      // this.distance=data[0].value
-      console.log("Store distance", data);
-    }).catch(e => {
-      console.log("error " + e);
-    })
-
-    this.health.queryAggregated({
-      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000), // three days ago
-      endDate: new Date(), // now
-      dataType: 'steps',
-      bucket: 'day'
-    }).then(data => {
-      // this.distance=data[0].value
-      console.log("Aggregated steps", data);
-    }).catch(e => {
-      console.log("error " + e);
-    })
-
-
+    // this.health.queryAggregated({
+    //   startDate: new Date(new Date().getTime() - 3 * 24 * 60 * 60 * 1000), // three days ago
+    //   endDate: new Date(), // now
+    //   dataType: 'AGGREGATE_HEART_POINTS',
+    // }).then(data => {
+    //   console.log('AGGREGATE_HEART_POINTS', data);
+    //  // this.activity(data);
+     
+    // }).catch(e => {
+    //   console.log("error heart_rate.resting" + e);
+    // });
 
     
+    // this.health.queryAggregated({
+    //   startDate: new Date(dt[0] + '-' + dt[1] + '-' + dt[2]), // three days ago
+    //   endDate: new Date(), // now
+    //   dataType: 'AGGREGATE_HEART_RATE_SUMMARY',
+    // }).then(data => {
+    //   console.log('heart_rate', data);
+    //  // this.activity(data);
+     
+    // }).catch(e => {
+    //   console.log("error heart_rate" + e);
+    // });
+
+
+    this.health.query({
+      startDate: new Date(dt[0] + '-' + dt[1] + '-' + dt[2]), // three days ago
+      endDate: new Date(), // now
+      dataType: 'TYPE_HEART_RATE_BPM',
+    }).then(data => {
+      console.log('TYPE_HEART_RATE_BPM', data);
+  
+     
+    }).catch(e => {
+      console.log("error heart_rate" + e);
+    });
 
 
 
+    this.health.query({
+      startDate: new Date(dt[0]+'-'+dt[1]+'-'+dt[2]), // three days ago
+      endDate: new Date(), // now
+      dataType: 'resp_rate',
+    }).then(data => {
+     console.log("heart_rate",data);
+    }).catch(e => {
+      console.log("error " + e);
+    });
+
+
+
+    this.health.query({
+      startDate: new Date(dt[0]+'-'+dt[1]+'-'+dt[2]), // three days ago
+      endDate: new Date(), // now
+      dataType: 'heart_rate.resting',
+    }).then(data => {
+     console.log("heart_rate",data);
+    }).catch(e => {
+      console.log("error " + e);
+    });
+
+
+
+
+
+
+    // this.health.queryAggregated({
+    //   startDate: new Date(dt[0] + '-' + dt[1] + '-' + dt[2]), // three days ago
+    //   endDate: new Date(), // now
+    //   dataType: 'TYPE_HEART_RATE_BPM',
+    // }).then(data => {
+    //   console.log('TYPE_HEART_RATE_BPM', data);
+    //  // this.activity(data);
+     
+    // }).catch(e => {
+    //   console.log("error heart_rate" + e);
+    // });
+
+
+    // this.health.queryAggregated({
+    //   startDate: new Date(new Date().getTime() - 3 * 24 * 60 * 60 * 1000), // three days ago
+    //   endDate: new Date(), // now
+    //   dataType: 'heart_rate.variability',
+    // }).then(data => {
+    //   console.log('heart_rate.variability', data);
+    //  // this.activity(data);
+     
+    // }).catch(e => {
+    //   console.log("error heart_rate.resting" + e);
+    // });
 
 
   }
+
+
+  // activity(data) {
+  //   var CountAct = 0;
+  //   var dis = 0
+  //   var diff = 0;
+  //   if (data.length > 0) {
+  //     var num = [];
+  //     var count = 0;
+  //     for (let i = 0; i < data.length; i++) {
+  //       let blod = JSON.stringify(data[i].value, undefined, 2);
+  //       var du = JSON.parse(blod);
+  //       console.log("du", du.walking);
+  //       console.log("duration", du.walking.duration)
+
+  //       if (typeof du.walking.duration !== 'undefined' && typeof du.walking.distance !== 'undefined') {
+  //         console.log("diff+", diff += du.walking.duration);
+  //         var seconds = Math.round(diff / 1000)
+
+  //         var minutes = Math.round(diff / (1000 * 60));
+
+  //         var hours = Math.round(diff / (1000 * 60 * 60));
+
+  //         if (seconds < 60) {
+  //           console.log("sec", seconds);
+  //         } else if (minutes < 60) {
+  //           console.log("min", minutes);
+  //         } else if (hours < 24) {
+  //           console.log("hr", hours);
+  //         }
+  //       }
+  //     }
+  //     // console.log("diff",diff);
+  //     //console.log("num",num);
+  //   }
+  // }
+
+
+  // do(data) {
+  //   var CountAct = 0;
+  //   var dis = 0
+  //   var diff = 0;
+  //   if (data.length > 0) {
+  //     var num = [];
+  //     var count = 0;
+  //     for (let i = 0; i < data.length; i++) {
+  //       let blod = JSON.stringify(data[i].value, undefined, 2);
+  //       var du = JSON.parse(blod);
+  //       if (typeof du.walking !== undefined) {
+  //         console.log("under pass")
+  //       } else if (typeof du.walking.duration !== undefined) {
+  //         console.log("under pass duration")
+  //         diff += du.walking.duration;
+  //       } else {
+  //         console.log("under pass duration")
+  //       }
+  //     }
+  //     console.log("do diff", diff);
+  //   }
+  // }
+
+
+
+
+
+
+
+
+
+
 
   ngOnInit() {
-  }
 
-  step() {
-    this.storage.get('steps').then((val) => {
-      console.log("steps", val)
-    });
-  }
-
-  dis() {
-    var dis;
-    this.storage.get('distance').then((val) => {
-      console.log("distance", val)
-    });
-  }
-
-  hert() {
-    this.storage.get('heart').then((val) => {
-      console.log("heart", val)
-    });
-  }
-
-
-  hm() {
-    this.storage.get('height').then((val) => {
-      console.log("height", val)
-    });
   }
 
 
 
-  stepcount(data) {
-    var stpcount = 0;
-    if (data.length > 0) {
-      for (let i = 0; i < data.length; i++) {
-        console.log("set", data[i].value + "d[i]", data[i]);
-        stpcount += data[i].value;
-      }
-      this.steps = Math.round(stpcount);
-    }
-  }
-
-  heartcount(data) {
-    var hraetcount = 0;
-    if (data.length > 0) {
-      for (let i = 0; i < data.length; i++) {
-       // console.log("dis", data[i].value + "d[i]", data[i]);
-        hraetcount++;
-      }
-      this.heart = hraetcount++;
-      console.log("this.hrt", this.heart);
-    }
-  }
-
-  discount(data) {
-    var discount = 0;
-    if (data.length > 0) {
-      for (let i = 0; i < data.length; i++) {
-       // console.log("dis", data[i].value + "d[i]", data[i]);
-        discount += data[i].value;
-      }
-      this.distance = Math.round(discount);
-    }
-  }
-
-  calories(data) {
-    var countCal = 0;
-    if (data.length > 0) {
-      for (let i = 0; i < data.length; i++) {
-       /// console.log("cal", data[i].value + "d[i]", data[i]);
-        countCal += data[i].value;
-      }
-      this.cal = Math.round(countCal);
-      console.log("count calories", this.cal);
-    }
-  }
-
-
-  activity(data) {
-    var CountAct = 0;
-    if (data.length > 0) {
-      for (let i = 0; i < data.length; i++) {
-       // console.log("actv", data[i].value + "d[i]", data[i]);
-        CountAct += data[i].value;
-      }
-      this.act = Math.round(CountAct);
-      console.log("count act calories", this.act);
-    }
-  }
-
-  bloodP(data){
-    var CountAct = 0;
-    if (data.length > 0) {
-      for (let i = 0; i < data.length; i++) {
-        // console.log("pb",bp);
-      //  console.log("systolic", data[i].value[0].systolic + "diastolic", data[i].value[1].diastolic);
-        this.bpm= data[i].value.systolic+"/"+data[i].value.diastolic+" "+"mmHg";
-      }
-    }
-  }
 
 
 }

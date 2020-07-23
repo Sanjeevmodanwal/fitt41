@@ -27,11 +27,11 @@ import { Health } from '@ionic-native/health/ngx';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    CalendarModule,
     BrowserModule, 
     HttpClientModule,
     IonicModule.forRoot(), 
     IonicStorageModule.forRoot(),
+    CalendarModule,
     AppRoutingModule , 
     TabsPageModule,
     

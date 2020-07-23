@@ -478,3 +478,23 @@ p.time-average {
 ion-calendar {
     margin-top: -50px;
 }
+::ng-deep .days.between button , ::ng-deep .days.endSelection button{
+    background: #d97d54 !important;
+    color: #fff !important;
+    border-radius: 0px !important;
+    transform: rotate(45deg);
+    p {
+        color: #fff !important;
+        transform: rotate(-45deg);
+    }
+}
+::ng-deep .primary .between button.days-btn:after ,::ng-deep .primary .startSelection:after , ::ng-deep .primary .endSelection:after{
+    opacity: 0 !important;
+}
+::ng-deep .primary .startSelection:before ,::ng-deep .primary .endSelection:before{
+    background-color: transparent !important;
+}
+ion-col.md.hydrated {
+    border: none;
+    outline: none !important;
+}
